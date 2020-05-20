@@ -15,7 +15,7 @@ routes.post('/devs', async (request, response) => {
     const techsArray = techs.split(',').map(tech => tech.trim());
     
     const location = {
-        type: 'point',
+        type: 'Point',
         coordinates: [longitude, latitude],
     };
 
