@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      
+    <title> Alvaro Pereira</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="links">
+            <a href="/instructors" class="active">Instructors</a>
+            <a href="/members">Members</a>
+        </div>
+    </header>
+
+<div class="card">
+
+    <section class="avatar" 
+    style="background: url(https://images.unsplash.com/photo-1553531580-a000ac8df244?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80) no-repeat center center / cover">
+    </section>
+    
+    <section class="details">
+    <form method="POST" action="/members?_method=PUT" >
+
+        <h3> Editar Mebro</h3>
+
+         <div class="item">
+            <div>Avatar URL</div>
+            <div>
+                <input type="url" name="avatar_url" placeholder="https://" value="https://images.unsplash.com/photo-1553531580-a000ac8df244?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
+            </div>
+        </div>
+
+    <div class="item">
+        <div>Nome</div>
+        <div>
+            <input type="text" name="name" id="" value="Alvaro Membro">
+        </div>
+    </div>
+    <div class="item">
+        <div>Email</div>
+        <div>
+            <input type="email" name="email" id=""  value="asdladlsa@hotlaslsa.com">
+        </div>
+    </div>
+    <div class="item">
+        <div>Data de nascimento</div>
+        <div>
+        <input type="date" name="birth" value="1992-09-24">
+        </div>
+    </div>
+    <div class="item">
+        <div>Sexo</div>
+        <div>
+        <span><input type="radio" name="gender" value="M"  checked>Masculino</span>
+        <span><input type="radio" name="gender" value="F" >Feminino</span>
+        
+        </div>
+    </div>
+    <div class="item">
+        <div>Tipo Sanguíneo</div>
+        <div>
+            <select name="blood">
+                <option value="A+">A+</option>
+                <option value="A-" >A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+" selected >AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+        </div>
+    </div>
+    <div class="item">
+        <div>Peso (kg)</div>
+        <div>
+        <input type="number" name="weight" value="80">
+        </div>
+    </div>
+    <div class="item">
+        <div>Altura (cm)</div>
+        <div>
+        <input type="number" name="height" value="189">
+        </div>
+    </div>
+    
+    
+    <button type="submit">Salvar</button>
+
+        <input type="hidden" name="id" value=1>  
+    </form>
+        <form id="form-delete" action="/memberes?_method=DELETE" method="post">
+
+            <input type="hidden" name="id" value=1>
+            <button type="submit">Deletar</button>
+        </form>
+
+    <script>
+    
+    const formDelete = document.querySelector("#form-delete")
+    formDelete.addEventListener("submit", function(event) {
+        const confirmation = confirm("Deseja Deletar?")
+        if(!confirmation){
+            event.preventDefault()
+        }
+    })
+    
+    </script>
+    </section>
+</div>
+
+<script src="/scripts.js"></script>
+</body>
+
+</html>
