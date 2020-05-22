@@ -14,11 +14,11 @@ module.exports = {
             location: {
                 $near: {
                     $geometry: {
-                        type: 'Point'   
-                           coo [longitude, latitude],
+                        type: 'Point'  , 
+                           coordinates : [longitude, latitude],
                     },
-                }, $maxDistance: 10000,
-                           
+                 $maxDistance: 10000,
+               },           
             },
         
         });
